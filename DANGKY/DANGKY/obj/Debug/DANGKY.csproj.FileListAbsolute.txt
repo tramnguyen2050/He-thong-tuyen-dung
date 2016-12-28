@@ -1,0 +1,9 @@
+D:\THẢO VY\DỰ ÁN\DANGKY\DANGKY\bin\Debug\DANGKY.exe.config
+D:\THẢO VY\DỰ ÁN\DANGKY\DANGKY\bin\Debug\DANGKY.exe
+D:\THẢO VY\DỰ ÁN\DANGKY\DANGKY\bin\Debug\DANGKY.pdb
+D:\THẢO VY\DỰ ÁN\DANGKY\DANGKY\obj\Debug\DANGKY.csprojResolveAssemblyReference.cache
+D:\THẢO VY\DỰ ÁN\DANGKY\DANGKY\obj\Debug\DANGKY.Properties.Resources.resources
+D:\THẢO VY\DỰ ÁN\DANGKY\DANGKY\obj\Debug\DANGKY.csproj.GenerateResource.Cache
+D:\THẢO VY\DỰ ÁN\DANGKY\DANGKY\obj\Debug\DANGKY.exe
+D:\THẢO VY\DỰ ÁN\DANGKY\DANGKY\obj\Debug\DANGKY.pdb
+D:\THẢO VY\DỰ ÁN\DANGKY\DANGKY\obj\Debug\DANGKY.frmDangKy.resources
