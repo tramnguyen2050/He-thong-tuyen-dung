@@ -7,3 +7,12 @@ D:\THẢO VY\DỰ ÁN\DANGKY\DANGKY\obj\Debug\DANGKY.csproj.GenerateResource.Cac
 D:\THẢO VY\DỰ ÁN\DANGKY\DANGKY\obj\Debug\DANGKY.exe
 D:\THẢO VY\DỰ ÁN\DANGKY\DANGKY\obj\Debug\DANGKY.pdb
 D:\THẢO VY\DỰ ÁN\DANGKY\DANGKY\obj\Debug\DANGKY.frmDangKy.resources
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\DANGKY\DANGKY\bin\Debug\DANGKY.exe.config
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\DANGKY\DANGKY\obj\Debug\DANGKY.exe
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\DANGKY\DANGKY\obj\Debug\DANGKY.pdb
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\DANGKY\DANGKY\obj\Debug\DANGKY.csprojResolveAssemblyReference.cache
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\DANGKY\DANGKY\bin\Debug\DANGKY.exe
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\DANGKY\DANGKY\bin\Debug\DANGKY.pdb
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\DANGKY\DANGKY\obj\Debug\DANGKY.frmDangKy.resources
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\DANGKY\DANGKY\obj\Debug\DANGKY.Properties.Resources.resources
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\DANGKY\DANGKY\obj\Debug\DANGKY.csproj.GenerateResource.Cache

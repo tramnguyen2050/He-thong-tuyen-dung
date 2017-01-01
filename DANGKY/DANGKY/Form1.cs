@@ -23,7 +23,7 @@ namespace DANGKY
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            cnStr = @"server = THAOVY-PC\LEVY; Database = HT_tuyendung; Integrated security = true;";
+            cnStr = @"server = .; Database = HT_tuyendung; Integrated security = true;";
         }
 
         private void Connect()
