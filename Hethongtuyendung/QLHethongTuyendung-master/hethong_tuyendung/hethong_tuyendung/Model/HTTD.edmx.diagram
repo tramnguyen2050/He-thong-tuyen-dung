@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="63b8e1a86c2b4030a42c568cbbadd660" Name="Diagram1">
+        <EntityTypeShape EntityType="HT_tuyendungModel.CongViec" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HT_tuyendungModel.HoSoXinViec" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HT_tuyendungModel.KNVL" Width="1.5" PointX="3" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HT_tuyendungModel.KyNang" Width="1.5" PointX="0.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HT_tuyendungModel.NopHoSo" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HT_tuyendungModel.NTD_CongViec" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HT_tuyendungModel.NganhNghe" Width="1.5" PointX="0.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HT_tuyendungModel.NganhNgheTuyenDung" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HT_tuyendungModel.NguoiTimViec" Width="1.5" PointX="1.5" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="HT_tuyendungModel.NhaTuyenDung" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="HT_tuyendungModel.FK_CongViec_CongViec" ManuallyRouted="false" />
+        <AssociationConnector Association="HT_tuyendungModel.FK_NTD_CongViec_CongViec" ManuallyRouted="false" />
+        <AssociationConnector Association="HT_tuyendungModel.FK_HoSoXinViec_NguoiTimViec" ManuallyRouted="false" />
+        <AssociationConnector Association="HT_tuyendungModel.FK_NopHoSo_HoSoXinViec" ManuallyRouted="false" />
+        <AssociationConnector Association="HT_tuyendungModel.FK_KNVL_KyNang" ManuallyRouted="false" />
+        <AssociationConnector Association="HT_tuyendungModel.FK_KNVL_NganhNghe" ManuallyRouted="false" />
+        <AssociationConnector Association="HT_tuyendungModel.FK_NopHoSo_NhaTuyenDung" ManuallyRouted="false" />
+        <AssociationConnector Association="HT_tuyendungModel.FK_NTD_CongViec_NhaTuyenDung" ManuallyRouted="false" />
+        <AssociationConnector Association="HT_tuyendungModel.FK_NganhNgheTuyenDung_NganhNghe" ManuallyRouted="false" />
+        <AssociationConnector Association="HT_tuyendungModel.FK_NganhNgheTuyenDung_NhaTuyenDung" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

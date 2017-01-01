@@ -1,0 +1,742 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HT_tuyendungModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CongViec">
+          <Key>
+            <PropertyRef Name="Ma_CV" />
+          </Key>
+          <Property Name="Ma_CV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ten_CV" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ma_NN" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="ChucVu" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LoaiCV" Type="nvarchar" MaxLength="50" />
+          <Property Name="KinhNghiem" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgonNgu" Type="nvarchar" MaxLength="50" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="HoSoXinViec">
+          <Key>
+            <PropertyRef Name="Ma_HS" />
+          </Key>
+          <Property Name="Ma_HS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ten_HS" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ma_NTV" Type="int" Nullable="false" />
+          <Property Name="NgayNop" Type="datetime" Nullable="false" />
+          <Property Name="KinhNghiem" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NgoaiNgu" Type="nvarchar" MaxLength="50" />
+          <Property Name="TrinhDo" Type="nvarchar" MaxLength="50" />
+          <Property Name="ViTriMongMuon" Type="nvarchar" MaxLength="50" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="KNVL">
+          <Key>
+            <PropertyRef Name="Ma_NN" />
+            <PropertyRef Name="Ma_KN" />
+          </Key>
+          <Property Name="Ma_NN" Type="int" Nullable="false" />
+          <Property Name="Ma_KN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="KyNang">
+          <Key>
+            <PropertyRef Name="Ma_KN" />
+          </Key>
+          <Property Name="Ma_KN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenKN" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="MoTa" Type="nvarchar" MaxLength="50" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NopHoSo">
+          <Key>
+            <PropertyRef Name="Ma_NTD" />
+            <PropertyRef Name="Ma_HS" />
+          </Key>
+          <Property Name="Ma_NTD" Type="int" Nullable="false" />
+          <Property Name="Ma_HS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NgayNop" Type="datetime" Nullable="false" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NTD_CongViec">
+          <Key>
+            <PropertyRef Name="Ma_CV" />
+            <PropertyRef Name="Ma_NTD" />
+          </Key>
+          <Property Name="Ma_CV" Type="int" Nullable="false" />
+          <Property Name="Ma_NTD" Type="int" Nullable="false" />
+          <Property Name="Mo_ta" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="NganhNghe">
+          <Key>
+            <PropertyRef Name="Ma_NN" />
+          </Key>
+          <Property Name="Ma_NN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ten_NN" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ten_CV" Type="nvarchar" MaxLength="50" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NganhNgheTuyenDung">
+          <Key>
+            <PropertyRef Name="Ma_NTD" />
+            <PropertyRef Name="Ma_NN" />
+          </Key>
+          <Property Name="Ma_NTD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ma_NN" Type="int" Nullable="false" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NguoiTimViec">
+          <Key>
+            <PropertyRef Name="Ma_NTV" />
+          </Key>
+          <Property Name="Ma_NTV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ho" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ten" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="NgaySinh" Type="datetime" />
+          <Property Name="GioiTinh" Type="nchar" MaxLength="10" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sdt" Type="nvarchar" MaxLength="20" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NhaTuyenDung">
+          <Key>
+            <PropertyRef Name="Ma_NTD" />
+          </Key>
+          <Property Name="Ma_NTD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ten_cty" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+          <Property Name="QuyMo" Type="nvarchar(max)" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_CongViec_CongViec">
+          <End Role="CongViec" Type="Self.CongViec" Multiplicity="1" />
+          <End Role="CongViec1" Type="Self.CongViec" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="CongViec">
+              <PropertyRef Name="Ma_CV" />
+            </Principal>
+            <Dependent Role="CongViec1">
+              <PropertyRef Name="Ma_CV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HoSoXinViec_NguoiTimViec">
+          <End Role="NguoiTimViec" Type="Self.NguoiTimViec" Multiplicity="1" />
+          <End Role="HoSoXinViec" Type="Self.HoSoXinViec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiTimViec">
+              <PropertyRef Name="Ma_NTV" />
+            </Principal>
+            <Dependent Role="HoSoXinViec">
+              <PropertyRef Name="Ma_NTV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KNVL_KyNang">
+          <End Role="KyNang" Type="Self.KyNang" Multiplicity="1" />
+          <End Role="KNVL" Type="Self.KNVL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KyNang">
+              <PropertyRef Name="Ma_KN" />
+            </Principal>
+            <Dependent Role="KNVL">
+              <PropertyRef Name="Ma_KN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KNVL_NganhNghe">
+          <End Role="NganhNghe" Type="Self.NganhNghe" Multiplicity="1" />
+          <End Role="KNVL" Type="Self.KNVL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NganhNghe">
+              <PropertyRef Name="Ma_NN" />
+            </Principal>
+            <Dependent Role="KNVL">
+              <PropertyRef Name="Ma_NN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NopHoSo_HoSoXinViec">
+          <End Role="HoSoXinViec" Type="Self.HoSoXinViec" Multiplicity="1" />
+          <End Role="NopHoSo" Type="Self.NopHoSo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HoSoXinViec">
+              <PropertyRef Name="Ma_HS" />
+            </Principal>
+            <Dependent Role="NopHoSo">
+              <PropertyRef Name="Ma_HS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NopHoSo_NhaTuyenDung">
+          <End Role="NhaTuyenDung" Type="Self.NhaTuyenDung" Multiplicity="1" />
+          <End Role="NopHoSo" Type="Self.NopHoSo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhaTuyenDung">
+              <PropertyRef Name="Ma_NTD" />
+            </Principal>
+            <Dependent Role="NopHoSo">
+              <PropertyRef Name="Ma_NTD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NTD_CongViec_CongViec">
+          <End Role="CongViec" Type="Self.CongViec" Multiplicity="1" />
+          <End Role="NTD_CongViec" Type="Self.NTD_CongViec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CongViec">
+              <PropertyRef Name="Ma_CV" />
+            </Principal>
+            <Dependent Role="NTD_CongViec">
+              <PropertyRef Name="Ma_CV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NTD_CongViec_NhaTuyenDung">
+          <End Role="NhaTuyenDung" Type="Self.NhaTuyenDung" Multiplicity="1" />
+          <End Role="NTD_CongViec" Type="Self.NTD_CongViec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhaTuyenDung">
+              <PropertyRef Name="Ma_NTD" />
+            </Principal>
+            <Dependent Role="NTD_CongViec">
+              <PropertyRef Name="Ma_NTD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NganhNgheTuyenDung_NganhNghe">
+          <End Role="NganhNghe" Type="Self.NganhNghe" Multiplicity="1" />
+          <End Role="NganhNgheTuyenDung" Type="Self.NganhNgheTuyenDung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NganhNghe">
+              <PropertyRef Name="Ma_NN" />
+            </Principal>
+            <Dependent Role="NganhNgheTuyenDung">
+              <PropertyRef Name="Ma_NN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NganhNgheTuyenDung_NhaTuyenDung">
+          <End Role="NhaTuyenDung" Type="Self.NhaTuyenDung" Multiplicity="1" />
+          <End Role="NganhNgheTuyenDung" Type="Self.NganhNgheTuyenDung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhaTuyenDung">
+              <PropertyRef Name="Ma_NTD" />
+            </Principal>
+            <Dependent Role="NganhNgheTuyenDung">
+              <PropertyRef Name="Ma_NTD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HT_tuyendungModelStoreContainer">
+          <EntitySet Name="CongViec" EntityType="Self.CongViec" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HoSoXinViec" EntityType="Self.HoSoXinViec" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KNVL" EntityType="Self.KNVL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KyNang" EntityType="Self.KyNang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NopHoSo" EntityType="Self.NopHoSo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NTD_CongViec" EntityType="Self.NTD_CongViec" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NganhNghe" EntityType="Self.NganhNghe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NganhNgheTuyenDung" EntityType="Self.NganhNgheTuyenDung" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NguoiTimViec" EntityType="Self.NguoiTimViec" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NhaTuyenDung" EntityType="Self.NhaTuyenDung" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CongViec_CongViec" Association="Self.FK_CongViec_CongViec">
+            <End Role="CongViec" EntitySet="CongViec" />
+            <End Role="CongViec1" EntitySet="CongViec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HoSoXinViec_NguoiTimViec" Association="Self.FK_HoSoXinViec_NguoiTimViec">
+            <End Role="NguoiTimViec" EntitySet="NguoiTimViec" />
+            <End Role="HoSoXinViec" EntitySet="HoSoXinViec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KNVL_KyNang" Association="Self.FK_KNVL_KyNang">
+            <End Role="KyNang" EntitySet="KyNang" />
+            <End Role="KNVL" EntitySet="KNVL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KNVL_NganhNghe" Association="Self.FK_KNVL_NganhNghe">
+            <End Role="NganhNghe" EntitySet="NganhNghe" />
+            <End Role="KNVL" EntitySet="KNVL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NopHoSo_HoSoXinViec" Association="Self.FK_NopHoSo_HoSoXinViec">
+            <End Role="HoSoXinViec" EntitySet="HoSoXinViec" />
+            <End Role="NopHoSo" EntitySet="NopHoSo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NopHoSo_NhaTuyenDung" Association="Self.FK_NopHoSo_NhaTuyenDung">
+            <End Role="NhaTuyenDung" EntitySet="NhaTuyenDung" />
+            <End Role="NopHoSo" EntitySet="NopHoSo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NTD_CongViec_CongViec" Association="Self.FK_NTD_CongViec_CongViec">
+            <End Role="CongViec" EntitySet="CongViec" />
+            <End Role="NTD_CongViec" EntitySet="NTD_CongViec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NTD_CongViec_NhaTuyenDung" Association="Self.FK_NTD_CongViec_NhaTuyenDung">
+            <End Role="NhaTuyenDung" EntitySet="NhaTuyenDung" />
+            <End Role="NTD_CongViec" EntitySet="NTD_CongViec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NganhNgheTuyenDung_NganhNghe" Association="Self.FK_NganhNgheTuyenDung_NganhNghe">
+            <End Role="NganhNghe" EntitySet="NganhNghe" />
+            <End Role="NganhNgheTuyenDung" EntitySet="NganhNgheTuyenDung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NganhNgheTuyenDung_NhaTuyenDung" Association="Self.FK_NganhNgheTuyenDung_NhaTuyenDung">
+            <End Role="NhaTuyenDung" EntitySet="NhaTuyenDung" />
+            <End Role="NganhNgheTuyenDung" EntitySet="NganhNgheTuyenDung" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HT_tuyendungModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CongViec">
+          <Key>
+            <PropertyRef Name="Ma_CV" />
+          </Key>
+          <Property Name="Ma_CV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ten_CV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ma_NN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LoaiCV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KinhNghiem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgonNgu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CongViec1" Relationship="Self.FK_CongViec_CongViec" FromRole="CongViec" ToRole="CongViec1" />
+          <NavigationProperty Name="CongViec2" Relationship="Self.FK_CongViec_CongViec" FromRole="CongViec1" ToRole="CongViec" />
+          <NavigationProperty Name="NTD_CongViec" Relationship="Self.FK_NTD_CongViec_CongViec" FromRole="CongViec" ToRole="NTD_CongViec" />
+        </EntityType>
+        <EntityType Name="HoSoXinViec">
+          <Key>
+            <PropertyRef Name="Ma_HS" />
+          </Key>
+          <Property Name="Ma_HS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ten_HS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ma_NTV" Type="Int32" Nullable="false" />
+          <Property Name="NgayNop" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="KinhNghiem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NgoaiNgu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TrinhDo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ViTriMongMuon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NguoiTimViec" Relationship="Self.FK_HoSoXinViec_NguoiTimViec" FromRole="HoSoXinViec" ToRole="NguoiTimViec" />
+          <NavigationProperty Name="NopHoSo" Relationship="Self.FK_NopHoSo_HoSoXinViec" FromRole="HoSoXinViec" ToRole="NopHoSo" />
+        </EntityType>
+        <EntityType Name="KNVL">
+          <Key>
+            <PropertyRef Name="Ma_NN" />
+            <PropertyRef Name="Ma_KN" />
+          </Key>
+          <Property Name="Ma_NN" Type="Int32" Nullable="false" />
+          <Property Name="Ma_KN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KyNang" Relationship="Self.FK_KNVL_KyNang" FromRole="KNVL" ToRole="KyNang" />
+          <NavigationProperty Name="NganhNghe" Relationship="Self.FK_KNVL_NganhNghe" FromRole="KNVL" ToRole="NganhNghe" />
+        </EntityType>
+        <EntityType Name="KyNang">
+          <Key>
+            <PropertyRef Name="Ma_KN" />
+          </Key>
+          <Property Name="Ma_KN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenKN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="MoTa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KNVL" Relationship="Self.FK_KNVL_KyNang" FromRole="KyNang" ToRole="KNVL" />
+        </EntityType>
+        <EntityType Name="NopHoSo">
+          <Key>
+            <PropertyRef Name="Ma_NTD" />
+            <PropertyRef Name="Ma_HS" />
+          </Key>
+          <Property Name="Ma_NTD" Type="Int32" Nullable="false" />
+          <Property Name="Ma_HS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NgayNop" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HoSoXinViec" Relationship="Self.FK_NopHoSo_HoSoXinViec" FromRole="NopHoSo" ToRole="HoSoXinViec" />
+          <NavigationProperty Name="NhaTuyenDung" Relationship="Self.FK_NopHoSo_NhaTuyenDung" FromRole="NopHoSo" ToRole="NhaTuyenDung" />
+        </EntityType>
+        <EntityType Name="NTD_CongViec">
+          <Key>
+            <PropertyRef Name="Ma_CV" />
+            <PropertyRef Name="Ma_NTD" />
+          </Key>
+          <Property Name="Ma_CV" Type="Int32" Nullable="false" />
+          <Property Name="Ma_NTD" Type="Int32" Nullable="false" />
+          <Property Name="Mo_ta" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="CongViec" Relationship="Self.FK_NTD_CongViec_CongViec" FromRole="NTD_CongViec" ToRole="CongViec" />
+          <NavigationProperty Name="NhaTuyenDung" Relationship="Self.FK_NTD_CongViec_NhaTuyenDung" FromRole="NTD_CongViec" ToRole="NhaTuyenDung" />
+        </EntityType>
+        <EntityType Name="NganhNghe">
+          <Key>
+            <PropertyRef Name="Ma_NN" />
+          </Key>
+          <Property Name="Ma_NN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ten_NN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ten_CV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KNVL" Relationship="Self.FK_KNVL_NganhNghe" FromRole="NganhNghe" ToRole="KNVL" />
+          <NavigationProperty Name="NganhNgheTuyenDung" Relationship="Self.FK_NganhNgheTuyenDung_NganhNghe" FromRole="NganhNghe" ToRole="NganhNgheTuyenDung" />
+        </EntityType>
+        <EntityType Name="NganhNgheTuyenDung">
+          <Key>
+            <PropertyRef Name="Ma_NTD" />
+            <PropertyRef Name="Ma_NN" />
+          </Key>
+          <Property Name="Ma_NTD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ma_NN" Type="Int32" Nullable="false" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NganhNghe" Relationship="Self.FK_NganhNgheTuyenDung_NganhNghe" FromRole="NganhNgheTuyenDung" ToRole="NganhNghe" />
+          <NavigationProperty Name="NhaTuyenDung" Relationship="Self.FK_NganhNgheTuyenDung_NhaTuyenDung" FromRole="NganhNgheTuyenDung" ToRole="NhaTuyenDung" />
+        </EntityType>
+        <EntityType Name="NguoiTimViec">
+          <Key>
+            <PropertyRef Name="Ma_NTV" />
+          </Key>
+          <Property Name="Ma_NTV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ho" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ten" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+          <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sdt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HoSoXinViec" Relationship="Self.FK_HoSoXinViec_NguoiTimViec" FromRole="NguoiTimViec" ToRole="HoSoXinViec" />
+        </EntityType>
+        <EntityType Name="NhaTuyenDung">
+          <Key>
+            <PropertyRef Name="Ma_NTD" />
+          </Key>
+          <Property Name="Ma_NTD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ten_cty" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QuyMo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NopHoSo" Relationship="Self.FK_NopHoSo_NhaTuyenDung" FromRole="NhaTuyenDung" ToRole="NopHoSo" />
+          <NavigationProperty Name="NTD_CongViec" Relationship="Self.FK_NTD_CongViec_NhaTuyenDung" FromRole="NhaTuyenDung" ToRole="NTD_CongViec" />
+          <NavigationProperty Name="NganhNgheTuyenDung" Relationship="Self.FK_NganhNgheTuyenDung_NhaTuyenDung" FromRole="NhaTuyenDung" ToRole="NganhNgheTuyenDung" />
+        </EntityType>
+        <Association Name="FK_CongViec_CongViec">
+          <End Role="CongViec" Type="Self.CongViec" Multiplicity="1" />
+          <End Role="CongViec1" Type="Self.CongViec" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="CongViec">
+              <PropertyRef Name="Ma_CV" />
+            </Principal>
+            <Dependent Role="CongViec1">
+              <PropertyRef Name="Ma_CV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NTD_CongViec_CongViec">
+          <End Role="CongViec" Type="Self.CongViec" Multiplicity="1" />
+          <End Role="NTD_CongViec" Type="Self.NTD_CongViec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CongViec">
+              <PropertyRef Name="Ma_CV" />
+            </Principal>
+            <Dependent Role="NTD_CongViec">
+              <PropertyRef Name="Ma_CV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HoSoXinViec_NguoiTimViec">
+          <End Role="NguoiTimViec" Type="Self.NguoiTimViec" Multiplicity="1" />
+          <End Role="HoSoXinViec" Type="Self.HoSoXinViec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiTimViec">
+              <PropertyRef Name="Ma_NTV" />
+            </Principal>
+            <Dependent Role="HoSoXinViec">
+              <PropertyRef Name="Ma_NTV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NopHoSo_HoSoXinViec">
+          <End Role="HoSoXinViec" Type="Self.HoSoXinViec" Multiplicity="1" />
+          <End Role="NopHoSo" Type="Self.NopHoSo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HoSoXinViec">
+              <PropertyRef Name="Ma_HS" />
+            </Principal>
+            <Dependent Role="NopHoSo">
+              <PropertyRef Name="Ma_HS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KNVL_KyNang">
+          <End Role="KyNang" Type="Self.KyNang" Multiplicity="1" />
+          <End Role="KNVL" Type="Self.KNVL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KyNang">
+              <PropertyRef Name="Ma_KN" />
+            </Principal>
+            <Dependent Role="KNVL">
+              <PropertyRef Name="Ma_KN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KNVL_NganhNghe">
+          <End Role="NganhNghe" Type="Self.NganhNghe" Multiplicity="1" />
+          <End Role="KNVL" Type="Self.KNVL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NganhNghe">
+              <PropertyRef Name="Ma_NN" />
+            </Principal>
+            <Dependent Role="KNVL">
+              <PropertyRef Name="Ma_NN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NopHoSo_NhaTuyenDung">
+          <End Role="NhaTuyenDung" Type="Self.NhaTuyenDung" Multiplicity="1" />
+          <End Role="NopHoSo" Type="Self.NopHoSo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhaTuyenDung">
+              <PropertyRef Name="Ma_NTD" />
+            </Principal>
+            <Dependent Role="NopHoSo">
+              <PropertyRef Name="Ma_NTD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NTD_CongViec_NhaTuyenDung">
+          <End Role="NhaTuyenDung" Type="Self.NhaTuyenDung" Multiplicity="1" />
+          <End Role="NTD_CongViec" Type="Self.NTD_CongViec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhaTuyenDung">
+              <PropertyRef Name="Ma_NTD" />
+            </Principal>
+            <Dependent Role="NTD_CongViec">
+              <PropertyRef Name="Ma_NTD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NganhNgheTuyenDung_NganhNghe">
+          <End Role="NganhNghe" Type="Self.NganhNghe" Multiplicity="1" />
+          <End Role="NganhNgheTuyenDung" Type="Self.NganhNgheTuyenDung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NganhNghe">
+              <PropertyRef Name="Ma_NN" />
+            </Principal>
+            <Dependent Role="NganhNgheTuyenDung">
+              <PropertyRef Name="Ma_NN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NganhNgheTuyenDung_NhaTuyenDung">
+          <End Role="NhaTuyenDung" Type="Self.NhaTuyenDung" Multiplicity="1" />
+          <End Role="NganhNgheTuyenDung" Type="Self.NganhNgheTuyenDung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhaTuyenDung">
+              <PropertyRef Name="Ma_NTD" />
+            </Principal>
+            <Dependent Role="NganhNgheTuyenDung">
+              <PropertyRef Name="Ma_NTD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HT_tuyendungEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CongViec" EntityType="Self.CongViec" />
+          <EntitySet Name="HoSoXinViec" EntityType="Self.HoSoXinViec" />
+          <EntitySet Name="KNVL" EntityType="Self.KNVL" />
+          <EntitySet Name="KyNang" EntityType="Self.KyNang" />
+          <EntitySet Name="NopHoSo" EntityType="Self.NopHoSo" />
+          <EntitySet Name="NTD_CongViec" EntityType="Self.NTD_CongViec" />
+          <EntitySet Name="NganhNghe" EntityType="Self.NganhNghe" />
+          <EntitySet Name="NganhNgheTuyenDung" EntityType="Self.NganhNgheTuyenDung" />
+          <EntitySet Name="NguoiTimViec" EntityType="Self.NguoiTimViec" />
+          <EntitySet Name="NhaTuyenDung" EntityType="Self.NhaTuyenDung" />
+          <AssociationSet Name="FK_CongViec_CongViec" Association="Self.FK_CongViec_CongViec">
+            <End Role="CongViec" EntitySet="CongViec" />
+            <End Role="CongViec1" EntitySet="CongViec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NTD_CongViec_CongViec" Association="Self.FK_NTD_CongViec_CongViec">
+            <End Role="CongViec" EntitySet="CongViec" />
+            <End Role="NTD_CongViec" EntitySet="NTD_CongViec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HoSoXinViec_NguoiTimViec" Association="Self.FK_HoSoXinViec_NguoiTimViec">
+            <End Role="NguoiTimViec" EntitySet="NguoiTimViec" />
+            <End Role="HoSoXinViec" EntitySet="HoSoXinViec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NopHoSo_HoSoXinViec" Association="Self.FK_NopHoSo_HoSoXinViec">
+            <End Role="HoSoXinViec" EntitySet="HoSoXinViec" />
+            <End Role="NopHoSo" EntitySet="NopHoSo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KNVL_KyNang" Association="Self.FK_KNVL_KyNang">
+            <End Role="KyNang" EntitySet="KyNang" />
+            <End Role="KNVL" EntitySet="KNVL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KNVL_NganhNghe" Association="Self.FK_KNVL_NganhNghe">
+            <End Role="NganhNghe" EntitySet="NganhNghe" />
+            <End Role="KNVL" EntitySet="KNVL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NopHoSo_NhaTuyenDung" Association="Self.FK_NopHoSo_NhaTuyenDung">
+            <End Role="NhaTuyenDung" EntitySet="NhaTuyenDung" />
+            <End Role="NopHoSo" EntitySet="NopHoSo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NTD_CongViec_NhaTuyenDung" Association="Self.FK_NTD_CongViec_NhaTuyenDung">
+            <End Role="NhaTuyenDung" EntitySet="NhaTuyenDung" />
+            <End Role="NTD_CongViec" EntitySet="NTD_CongViec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NganhNgheTuyenDung_NganhNghe" Association="Self.FK_NganhNgheTuyenDung_NganhNghe">
+            <End Role="NganhNghe" EntitySet="NganhNghe" />
+            <End Role="NganhNgheTuyenDung" EntitySet="NganhNgheTuyenDung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NganhNgheTuyenDung_NhaTuyenDung" Association="Self.FK_NganhNgheTuyenDung_NhaTuyenDung">
+            <End Role="NhaTuyenDung" EntitySet="NhaTuyenDung" />
+            <End Role="NganhNgheTuyenDung" EntitySet="NganhNgheTuyenDung" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HT_tuyendungModelStoreContainer" CdmEntityContainer="HT_tuyendungEntities">
+          <EntitySetMapping Name="CongViec">
+            <EntityTypeMapping TypeName="HT_tuyendungModel.CongViec">
+              <MappingFragment StoreEntitySet="CongViec">
+                <ScalarProperty Name="Ma_CV" ColumnName="Ma_CV" />
+                <ScalarProperty Name="Ten_CV" ColumnName="Ten_CV" />
+                <ScalarProperty Name="Ma_NN" ColumnName="Ma_NN" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="LoaiCV" ColumnName="LoaiCV" />
+                <ScalarProperty Name="KinhNghiem" ColumnName="KinhNghiem" />
+                <ScalarProperty Name="NgonNgu" ColumnName="NgonNgu" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HoSoXinViec">
+            <EntityTypeMapping TypeName="HT_tuyendungModel.HoSoXinViec">
+              <MappingFragment StoreEntitySet="HoSoXinViec">
+                <ScalarProperty Name="Ma_HS" ColumnName="Ma_HS" />
+                <ScalarProperty Name="Ten_HS" ColumnName="Ten_HS" />
+                <ScalarProperty Name="Ma_NTV" ColumnName="Ma_NTV" />
+                <ScalarProperty Name="NgayNop" ColumnName="NgayNop" />
+                <ScalarProperty Name="KinhNghiem" ColumnName="KinhNghiem" />
+                <ScalarProperty Name="NgoaiNgu" ColumnName="NgoaiNgu" />
+                <ScalarProperty Name="TrinhDo" ColumnName="TrinhDo" />
+                <ScalarProperty Name="ViTriMongMuon" ColumnName="ViTriMongMuon" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KNVL">
+            <EntityTypeMapping TypeName="HT_tuyendungModel.KNVL">
+              <MappingFragment StoreEntitySet="KNVL">
+                <ScalarProperty Name="Ma_NN" ColumnName="Ma_NN" />
+                <ScalarProperty Name="Ma_KN" ColumnName="Ma_KN" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KyNang">
+            <EntityTypeMapping TypeName="HT_tuyendungModel.KyNang">
+              <MappingFragment StoreEntitySet="KyNang">
+                <ScalarProperty Name="Ma_KN" ColumnName="Ma_KN" />
+                <ScalarProperty Name="TenKN" ColumnName="TenKN" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NopHoSo">
+            <EntityTypeMapping TypeName="HT_tuyendungModel.NopHoSo">
+              <MappingFragment StoreEntitySet="NopHoSo">
+                <ScalarProperty Name="Ma_NTD" ColumnName="Ma_NTD" />
+                <ScalarProperty Name="Ma_HS" ColumnName="Ma_HS" />
+                <ScalarProperty Name="NgayNop" ColumnName="NgayNop" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NTD_CongViec">
+            <EntityTypeMapping TypeName="HT_tuyendungModel.NTD_CongViec">
+              <MappingFragment StoreEntitySet="NTD_CongViec">
+                <ScalarProperty Name="Ma_CV" ColumnName="Ma_CV" />
+                <ScalarProperty Name="Ma_NTD" ColumnName="Ma_NTD" />
+                <ScalarProperty Name="Mo_ta" ColumnName="Mo_ta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NganhNghe">
+            <EntityTypeMapping TypeName="HT_tuyendungModel.NganhNghe">
+              <MappingFragment StoreEntitySet="NganhNghe">
+                <ScalarProperty Name="Ma_NN" ColumnName="Ma_NN" />
+                <ScalarProperty Name="Ten_NN" ColumnName="Ten_NN" />
+                <ScalarProperty Name="Ten_CV" ColumnName="Ten_CV" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NganhNgheTuyenDung">
+            <EntityTypeMapping TypeName="HT_tuyendungModel.NganhNgheTuyenDung">
+              <MappingFragment StoreEntitySet="NganhNgheTuyenDung">
+                <ScalarProperty Name="Ma_NTD" ColumnName="Ma_NTD" />
+                <ScalarProperty Name="Ma_NN" ColumnName="Ma_NN" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NguoiTimViec">
+            <EntityTypeMapping TypeName="HT_tuyendungModel.NguoiTimViec">
+              <MappingFragment StoreEntitySet="NguoiTimViec">
+                <ScalarProperty Name="Ma_NTV" ColumnName="Ma_NTV" />
+                <ScalarProperty Name="Ho" ColumnName="Ho" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Sdt" ColumnName="Sdt" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NhaTuyenDung">
+            <EntityTypeMapping TypeName="HT_tuyendungModel.NhaTuyenDung">
+              <MappingFragment StoreEntitySet="NhaTuyenDung">
+                <ScalarProperty Name="Ma_NTD" ColumnName="Ma_NTD" />
+                <ScalarProperty Name="Ten_cty" ColumnName="Ten_cty" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="QuyMo" ColumnName="QuyMo" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
