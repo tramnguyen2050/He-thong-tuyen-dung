@@ -51,7 +51,7 @@ namespace hethong_tuyendung
                 }
                 else
                 {
-                    MessageBox.Show("Sai m?t kh?u ho?c email.", "Thông báo!");
+                    MessageBox.Show("Sai mat khau hoac email", "Thông báo!");
                 }
             }
             catch (SqlException ex)

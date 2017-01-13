@@ -16,7 +16,7 @@ namespace hethong_tuyendung
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTuyendung());
+            Application.Run(new NhaTuyenDung());
         }
     }
 }

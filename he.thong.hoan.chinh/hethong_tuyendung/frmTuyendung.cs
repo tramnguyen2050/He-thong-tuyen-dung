@@ -22,7 +22,7 @@ namespace hethong_tuyendung
 
         private void frmTuyendung_Load(object sender, EventArgs e)
         {
-            cnStr = "Server =.; Database = HTTD; Integrated security = true;";
+            cnStr = "Server =.; Database = HT_tuyendung; Integrated security = true;";
             cn = new SqlConnection(cnStr);
         }
         private void Connect()
@@ -49,6 +49,13 @@ namespace hethong_tuyendung
         {
             this.Hide();
             FrmDangNhap f = new FrmDangNhap();
+            f.Show();
+        }
+
+        private void btDangKy_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmDangKy f = new frmDangKy();
             f.Show();
         }
 

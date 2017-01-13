@@ -19,3 +19,15 @@ C:\Users\TramNguyen\Desktop\QLHethongTuyendung\hethong_tuyendung\hethong_tuyendu
 C:\Users\TramNguyen\Desktop\QLHethongTuyendung\hethong_tuyendung\hethong_tuyendung\obj\Debug\hethong_tuyendung.csproj.GenerateResource.Cache
 C:\Users\TramNguyen\Desktop\QLHethongTuyendung\hethong_tuyendung\hethong_tuyendung\bin\Debug\hethong_tuyendung.exe
 C:\Users\TramNguyen\Desktop\QLHethongTuyendung\hethong_tuyendung\hethong_tuyendung\bin\Debug\hethong_tuyendung.pdb
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\he.thong.hoan.chinh\hethong_tuyendung\bin\Debug\hethong_tuyendung.exe.config
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\he.thong.hoan.chinh\hethong_tuyendung\obj\Debug\hethong_tuyendung.exe
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\he.thong.hoan.chinh\hethong_tuyendung\obj\Debug\hethong_tuyendung.pdb
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\he.thong.hoan.chinh\hethong_tuyendung\bin\Debug\hethong_tuyendung.exe
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\he.thong.hoan.chinh\hethong_tuyendung\bin\Debug\hethong_tuyendung.pdb
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\he.thong.hoan.chinh\hethong_tuyendung\obj\Debug\hethong_tuyendung.csprojResolveAssemblyReference.cache
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\he.thong.hoan.chinh\hethong_tuyendung\obj\Debug\hethong_tuyendung.frmTuyendung.resources
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\he.thong.hoan.chinh\hethong_tuyendung\obj\Debug\hethong_tuyendung.FrmDangNhap.resources
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\he.thong.hoan.chinh\hethong_tuyendung\obj\Debug\hethong_tuyendung.Properties.Resources.resources
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\he.thong.hoan.chinh\hethong_tuyendung\obj\Debug\hethong_tuyendung.csproj.GenerateResource.Cache
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\he.thong.hoan.chinh\hethong_tuyendung\obj\Debug\hethong_tuyendung.frmDangKy.resources
+C:\Users\TramNguyen\Desktop\QLHethongTuyendung\he.thong.hoan.chinh\hethong_tuyendung\obj\Debug\hethong_tuyendung.NhaTuyenDung.resources
